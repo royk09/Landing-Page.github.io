@@ -40,11 +40,13 @@ jQuery(document).ready(function () {
             );
     });
 
-    /* Удаление cookie для проверки
-    function deleteCookie(name) {
+   // Удаление cookie для проверки
+   /*
+   function deleteCookie(name) {
          $.cookie(name, null, {
              expires: -1,
              path: '/'
          })
-     } */
+     }
+     */
 });

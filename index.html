@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <title>Title</title>
 
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
 
@@ -129,7 +129,7 @@
         </div>
         <div class="row text-left options-desc">
             <div class="col-md-5">
-                <img src="img/img-option.jpg" alt="option-picture">
+                <img src="img/img-option.jpg" alt="option-picture" class="option-picture">
             </div>
             <div class="col-md-2">
 
@@ -238,24 +238,11 @@
 <div id="overlay"></div>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <script src="js/slider.js"></script>
 <script src="js/jquery.cookie.js"></script>
 <script src="js/cookie.js"></script>
-<script>
-   // $('.dropdown-submenu .dropdown-menu').hide();
-    $('ul.nav li.dropdown').hover(function() {
-        $(this).find('.dropdown-menu').stop(true, true).delay(50).fadeIn(200);
-        $(this).find('.dropdown-submenu .dropdown-menu ').stop(true, true).hide();
-
-       // $(this)find('').css('border-bottom', '1px solid yellow');
-
-    }, function() {
-        $(this).find('.dropdown-menu').stop(true, true).delay(50).fadeOut(200);
-    });
-
-
-</script>
+<script src="js/menu.js"></script>
 </body>
 </html>
