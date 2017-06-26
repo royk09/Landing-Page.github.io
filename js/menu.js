@@ -76,7 +76,6 @@ $(document).ready(function () {
         });
     }
 
-
     var cookieName = 'resize';
     var cookieOptions = {expires: 1, path: '/'};
     var temp;
@@ -84,16 +83,26 @@ $(document).ready(function () {
         $.cookie(cookieName, 'maxWidth', cookieOptions);
     } else {
         temp = $.cookie(cookieName);
+
     }
     $(window).resize(function () {
         if (temp == 'maxWidth' && $(window).width() <= 768) {
             $.cookie(cookieName, 'minWidth', cookieOptions);
-            location.reload();
-            return false;
+
+            if (window.sidebar) {   //for browser Mozilla Firefox
+                window.location = window.location;
+            } else {
+                location.reload();
+            }
+
         } else if (temp == 'minWidth' && $(window).width() >= 768) {
             $.cookie(cookieName, 'maxWidth', cookieOptions);
-            location.reload();
-            return false;
+            if (window.sidebar) {  //for browser Mozilla Firefox
+                window.location = window.location;
+            } else {
+                location.reload();
+            }
+
         } else {
             return false;
         }
