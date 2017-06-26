@@ -1,4 +1,6 @@
+
 $(document).ready(function () {
+
     var win_w = $(window).width();
     var min_width = 768;
     if (win_w > min_width) {
@@ -73,5 +75,30 @@ $(document).ready(function () {
             return false;
         });
     }
+
+
+    var cookieName = 'resize';
+    var cookieOptions = {expires: 1, path: '/'};
+    var temp;
+    if (!$.cookie(cookieName)) {
+        $.cookie(cookieName, 'maxWidth', cookieOptions);
+    } else {
+        temp = $.cookie(cookieName);
+    }
+    $(window).resize(function () {
+        if (temp == 'maxWidth' && $(window).width() <= 768) {
+            $.cookie(cookieName, 'minWidth', cookieOptions);
+            location.reload();
+            return false;
+        } else if (temp == 'minWidth' && $(window).width() >= 768) {
+            $.cookie(cookieName, 'maxWidth', cookieOptions);
+            location.reload();
+            return false;
+        } else {
+            return false;
+        }
+
+    });
+
 });
 
