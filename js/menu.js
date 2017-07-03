@@ -92,7 +92,7 @@ $(document).ready(function () {
             if (window.sidebar) {   //for browser Mozilla Firefox
                 window.location = window.location;
             } else {
-                window.location.reload();
+                history.go(0);
             }
 
         } else if (temp == 'minWidth' && $(window).width() >= 768) {
@@ -100,7 +100,7 @@ $(document).ready(function () {
             if (window.sidebar) {  //for browser Mozilla Firefox
                 window.location = window.location;
             } else {
-                window.location.reload();
+                history.go(0);
             }
 
         } else {
